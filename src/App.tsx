@@ -1,17 +1,21 @@
-import navbar from "./components/navbar"
-import hero from "./components/hero"
-import about from "./components/about"
+import Navbar from "./components/navbar"
+import Hero from "./components/hero"
+import About from "./components/about"
+import Projects from "./pages/projects"
+import Contact from "./pages/contact"
 
 function App() {
 
   return (
     <>
       <nav>
-        {navbar()}
+        <Navbar />
       </nav>
       <main>
-        {hero()}
-        {about()}
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
       </main>
     </>
   )
