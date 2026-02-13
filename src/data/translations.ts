@@ -73,6 +73,9 @@ export const translations = {
         messagePlaceholder: '¿En qué puedo ayudarte?',
         send: 'Enviar Mensaje'
       }
+    },
+    footer: {
+      rights: 'Todos los derechos reservados'
     }
   },
   en: {
@@ -154,6 +157,9 @@ export const translations = {
         messagePlaceholder: 'How can I help you?',
         send: 'Send Message'
       }
+    },
+    footer: {
+      rights: 'All rights reserved'
     }
   }
 };
