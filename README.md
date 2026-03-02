@@ -47,7 +47,7 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
 1.  **Clonar el repositorio**
     ```bash
-    git clone https://github.com/usuario/portafolio.git
+    git clone https://github.com/GusDev071/Developer-professional-portfolio.git
     cd portafolio
     ```
 
