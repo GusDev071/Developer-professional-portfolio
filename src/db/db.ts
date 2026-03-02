@@ -1,6 +1,21 @@
 import type { Project } from "../types"
 
 export const db : Project[] = [
+     {
+        id: 8,
+        name: 'Plataforma de recompensas, Calidad Bueno',
+        description: {
+            es: 'Plataforma de recompensas, Calidad Bueno es una plataforma para recompensar a los usuarios por sus compras. El proyecto fue desarrollado con Angular v21, TypeScript, CSS y Bootstrap. Con consumo de API-RESTFULL.',            
+            en: 'Plataforma de recompensas, Calidad Bueno is a platform to reward users for their purchases. The project was developed with Angular v21, TypeScript, CSS and Bootstrap. It consumes a RESTful API.'
+        },
+        technologies: ['Angular', 'TypeScript', 'CSS','Bootstrap', 'API-RESTFULL'],
+        image: 'Bueno-sitio.png',
+        state: {
+            es: 'Activo',
+            en: 'Active'
+        },
+        url: 'https://elsabordemexicotellevaalestadio.com'
+    },
     {
         id: 1,
         name: 'Guitar-LA JS',
@@ -47,21 +62,6 @@ export const db : Project[] = [
         url: 'https://zippy-taffy-c3e100.netlify.app/',
     },
      {
-        id: 4,
-        name: 'Plataforma de lealtad',
-        description: {
-            es: 'Plataforma de lealtad es una aplicación web que permite a los usuarios registrarse, iniciar sesión, y gestionar su información personal. Además, ofrece una funcionalidad de lealtad, donde los usuarios pueden acumular puntos al realizar compras y canjearlos por recompensas. usuario de prueba: correo:PRUEBAVP@gmail.com , contraseña: Prueba123#',
-            en: 'Loyalty platform is a web application that allows users to register, log in, and manage their personal information. It also offers loyalty functionality, where users can accumulate points when making purchases and redeem them for rewards. Test user: email:PRUEBAVP@gmail.com , password: Prueba123#'
-        },
-        technologies: ['Angular', 'TypeScript', 'Bootstrap'],
-        image: 'image2.png',
-        state: {
-            es: 'Activo',
-            en: 'Active'
-        },
-        url: 'https://loyalty.viveplus.com.mx/',
-    },
-     {
         id: 5,
         name: 'Bego proyecto personal tracking y maquetación',
         description: {
@@ -92,10 +92,10 @@ export const db : Project[] = [
         url: 'https://drive.google.com/file/d/1-EmVEb6_S2RQMMK9-QK_CHbUL0GgzEB9/view?usp=drivesdk',
     },{
         id: 7,
-        name: 'Visa proyecto personal',
+        name: 'Prueba tecnica de trabajo',
         description: {
-            es: 'Proyecto para poder probrar endpoints de una API creada en laravel.',
-            en: 'Project to test endpoints of an API created in Laravel.'
+            es: 'Proyecto para poder hacer consumo de API Restfull creada para una prueba tecnica de trabajo.',
+            en: 'Project to test endpoints of an API created for a technical test of work.'
         },
         technologies: ['Angular', 'TypeScript', 'Bootstrap', 'PHP', 'Postman'],
         image: 'image7.png',
