@@ -52,7 +52,7 @@ export default function Contact() {
                 <div className="space-y-6">
                   {/* WhatsApp */}
                   <a 
-                    href="https://wa.me/5647590227" 
+                    href="https://wa.me/5628048986" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 group p-4 rounded-xl hover:bg-white/5 transition-all cursor-pointer border border-transparent hover:border-green-500/30"
@@ -69,7 +69,7 @@ export default function Contact() {
 
                   {/* Email */}
                   <a 
-                    href="mailto:gf377645@gmail.com" 
+                    href="mailto:florescadenagustavo@gmail.com" 
                     className="flex items-center gap-4 group p-4 rounded-xl hover:bg-white/5 transition-all cursor-pointer border border-transparent hover:border-blue-500/30"
                   >
                     <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
@@ -77,7 +77,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="text-white font-semibold">Email</h4>
-                      <p className="text-gray-400 group-hover:text-blue-400 transition-colors">gf377645@gmail.com</p>
+                      <p className="text-gray-400 group-hover:text-blue-400 transition-colors">florescadenagustavo@gmail.com</p>
                     </div>
                     <i className="fa-solid fa-arrow-right text-gray-500 ml-auto group-hover:translate-x-2 group-hover:text-blue-400 transition-all"></i>
                   </a>

@@ -18,22 +18,22 @@ export const db : Project[] = [
     },
     {
         id: 1,
-        name: 'Guitar-LA JS',
+        name: 'Guitar-LA',
         description: {
             es: 'Guitar-LA JS es una página web para la venta de guitarras y accesorios. El proyecto fue desarrollado con React, JavaScript y TailwindCSS.',
             en: 'Guitar-LA JS is a website for selling guitars and accessories. The project was developed with React, JavaScript and TailwindCSS.'
         },
         technologies: ['React', 'JavaScript', 'TailwindCSS'],
-        image: 'image1.png',
+        image: 'guitarLA.png',
         state: {
             es: 'Activo',
             en: 'Active'
         },
-        url: 'https://superb-shortbread-7dbd93.netlify.app/'
+        url: 'https://guitarla-gusdev.netlify.app/'
     },
      {
         id: 2,
-        name: 'Guitar-LA TS',
+        name: 'Guitar-LA Gus Version\'s',
         description: {
             es: 'Guitar-LA TS es una página web para la venta de guitarras y accesorios. Todo el código fue migrado de JavaScript a TypeScript.',
             en: 'Guitar-LA TS is a website for selling guitars and accessories. All code was migrated from JavaScript to TypeScript.'
@@ -44,7 +44,7 @@ export const db : Project[] = [
             es: 'Activo',
             en: 'Active'
         },
-        url: 'https://silly-smakager-31ee9c.netlify.app/',
+        url: 'https://guiatarla-agsoft.netlify.app/',
     },
      {
         id: 3,
@@ -59,7 +59,7 @@ export const db : Project[] = [
             es: 'Activo',
             en: 'Active'
         },
-        url: 'https://zippy-taffy-c3e100.netlify.app/',
+        url: 'https://calculadora-propinas-gusdev.netlify.app/',
     },
      {
         id: 5,
@@ -104,5 +104,33 @@ export const db : Project[] = [
             en: 'Active'
         },
         url: 'https://prueba-frontend-b3b8a.web.app/',
+    },{
+        id:9,
+        name: 'Tu Control',
+        description: {
+            es: 'Aplicación web para el control de gastos y finanzas personales, permitiendo a los usuarios registrar su presupuesto, controlar sus gastos y visualizar estadísticas.',
+            en: 'Web application for personal expense and financial management, allowing users to register their income and expenses, generate reports and visualize statistics.'
+        },
+        technologies: ['React', 'TypeScript', 'TailwindCSS', 'Context API', 'React-cicular-progressbar', 'React-Date-Picker'],
+        image: 'image8.png',
+        state: {
+            es: 'Activo',
+            en: 'Active'
+        },
+        url: 'https://tu-control-gusdev07.netlify.app/',
+    },{
+        id:10,
+        name: 'Contador de calorias y actividad fisica',
+        description: {
+            es: 'Aplicación web para el conteo de calorías y el seguimiento de la actividad física, permitiendo a los usuarios registrar sus comidas y ejercicios.',
+            en: 'Web application for calorie counting and physical activity tracking, allowing users to log their meals and exercises.'
+        },
+        technologies: ['React', 'TypeScript', 'TailwindCSS'],
+        image: 'image9.png',
+        state: {
+            es: 'Activo',
+            en: 'Active'
+        },
+        url: 'https://contador-calorico-gusdev.netlify.app/',
     }
 ]

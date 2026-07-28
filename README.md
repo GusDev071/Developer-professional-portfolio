@@ -53,17 +53,17 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
 2.  **Instalar dependencias**
     ```bash
-    npm install
+    pnpm install
     ```
 
 3.  **Iniciar servidor de desarrollo**
     ```bash
-    npm run dev
+    pnpm dev
     ```
 
 4.  **Construir para producción**
     ```bash
-    npm run build
+    pnpm build
     ```
 
 ## 👤 Autor
