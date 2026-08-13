@@ -1,74 +1,124 @@
-import { useState } from 'react';
-import TypingEffect from './TypingEffect';
+import { useEffect, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Navbar() {
   const { t, language, toggleLanguage } = useLanguage();
-  const [isLangOpen, setIsLangOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const toggleDropdown = () => setIsLangOpen(!isLangOpen);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
+  const links = [
+    { href: '#about', label: t.navbar.about },
+    { href: '#projects', label: t.navbar.projects },
+    { href: '#contact', label: t.navbar.contact },
+  ];
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/25 backdrop-blur-lg border border-white/50 
-            rounded-2xl shadow-lg p-4 m-4 md:m-10 flex flex-col md:flex-row justify-between items-center overflow-visible animate-slide-down">
-         
-         <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden rounded-2xl">
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-         </div>
-
-         <h1 className="text-2xl font-bold text-white text-start z-10 animate-fade-in hover:scale-105 transition-transform duration-300 cursor-default font-mono tracking-tighter mb-4 md:mb-0">
-            <span className="text-green-400 font-extrabold">&lt;</span>
-            <TypingEffect text="  Gustavo Flores " speed={150} />
-            <span className="text-green-400 font-extrabold"> /&gt;</span>
-         </h1>
-            
-         <div className="flex items-center gap-6 z-10">
-            <ul className="flex space-x-4 text-center justify-center">
-                <li className="animate-fade-in delay-100"><a href="#about" className="text-white hover:text-green-400 transition-all duration-300 hover:scale-110 inline-block">{t.navbar.about}</a></li>
-                <li className="animate-fade-in delay-200"><a href="#projects" className="text-white hover:text-green-400 transition-all duration-300 hover:scale-110 inline-block">{t.navbar.projects}</a></li>
-                <li className="animate-fade-in delay-300"><a href="#contact" className="text-white hover:text-green-400 transition-all duration-300 hover:scale-110 inline-block">{t.navbar.contact}</a></li>
-            </ul>
-
-            {/* Language Dropdown */}
-            <div className="relative">
-                <button 
-                    onClick={toggleDropdown}
-                    className="flex items-center gap-2 text-white hover:text-green-400 transition-all duration-300 bg-white/10 px-3 py-1.5 rounded-lg border border-white/20 hover:bg-white/20 backdrop-blur-md"
-                >
-                    <i className="fa-solid fa-globe"></i>
-                    <span className="font-mono font-bold">{language.toUpperCase()}</span>
-                    <i className={`fa-solid fa-chevron-down text-xs transition-transform duration-300 ${isLangOpen ? 'rotate-180' : ''}`}></i>
-                </button>
-                
-                {isLangOpen && (
-                    <div className="absolute top-full right-0 mt-2 w-32 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl shadow-xl overflow-hidden flex flex-col animate-fade-in z-50">
-                        <button 
-                            onClick={() => { toggleLanguage('es'); setIsLangOpen(false); }}
-                            className={`px-4 py-3 text-left hover:bg-white/10 transition-colors flex items-center gap-2 ${language === 'es' ? 'text-green-400 font-bold bg-white/5' : 'text-white'}`}
-                        >
-                            <span className="text-lg">🇪🇸</span> ES
-                        </button>
-                        <button 
-                            onClick={() => { toggleLanguage('en'); setIsLangOpen(false); }}
-                            className={`px-4 py-3 text-left hover:bg-white/10 transition-colors flex items-center gap-2 ${language === 'en' ? 'text-green-400 font-bold bg-white/5' : 'text-white'}`}
-                        >
-                             <span className="text-lg">🇺🇸</span> EN
-                        </button>
-                    </div>
-                )}
+      <header
+        className={`nav-shell transition-[background,backdrop-filter,border-color] duration-300 ${
+          scrolled
+            ? 'bg-ink/75 backdrop-blur-xl border-b border-line-soft'
+            : 'bg-transparent border-b border-transparent'
+        }`}
+      >
+        <div
+          className={`mx-auto max-w-6xl px-5 md:px-6 transition-all duration-300 ${
+            scrolled ? 'py-3' : 'py-5 md:py-6'
+          }`}
+        >
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+            {/* Language — left */}
+            <div className="flex items-center gap-2 justify-self-start mono text-[11px] tracking-[0.14em]">
+              <button
+                type="button"
+                onClick={() => toggleLanguage('es')}
+                className={`transition-colors ${language === 'es' ? 'text-signal' : 'text-fog hover:text-mist'}`}
+                aria-pressed={language === 'es'}
+              >
+                ES
+              </button>
+              <span className="text-line">/</span>
+              <button
+                type="button"
+                onClick={() => toggleLanguage('en')}
+                className={`transition-colors ${language === 'en' ? 'text-signal' : 'text-fog hover:text-mist'}`}
+                aria-pressed={language === 'en'}
+              >
+                EN
+              </button>
             </div>
-         </div>
-      </nav>
+
+            {/* Mark — center */}
+            <a
+              href="#"
+              className="justify-self-center display text-sm md:text-base font-bold tracking-tight text-paper hover:text-signal transition-colors"
+            >
+              GF
+            </a>
+
+            {/* Desktop links + mobile trigger — right */}
+            <div className="justify-self-end flex items-center gap-6">
+              <nav className="hidden md:flex items-center gap-7" aria-label="Primary">
+                {links.map((item) => (
+                  <a key={item.href} href={item.href} className="nav-link">
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+
+              <button
+                type="button"
+                className="md:hidden mono text-[11px] tracking-[0.16em] uppercase text-mist hover:text-paper transition-colors"
+                onClick={() => setMenuOpen(true)}
+                aria-label="Open menu"
+              >
+                Menu
+              </button>
+            </div>
+          </div>
+
+          <div
+            className={`mt-3 h-px w-full transition-opacity duration-300 ${
+              scrolled ? 'bg-line opacity-100' : 'bg-line-soft opacity-60'
+            }`}
+          />
+        </div>
+      </header>
+
+      {menuOpen && (
+        <div className="nav-overlay md:hidden" role="dialog" aria-modal="true">
+          <button
+            type="button"
+            className="absolute top-6 right-5 mono text-[11px] tracking-[0.16em] uppercase text-mist hover:text-paper"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            Close
+          </button>
+
+          <nav className="flex flex-col" aria-label="Mobile">
+            {links.map((item) => (
+              <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      )}
     </>
-  )
+  );
 }

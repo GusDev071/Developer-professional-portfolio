@@ -14,6 +14,11 @@ export const translations = {
       and: "y",
       viewProjects: "Ver Proyectos",
       contactMe: "Contáctame",
+      available: "Disponible para proyectos",
+      roleTag: "Full Stack Developer",
+      location: "México (UTC-6)",
+      experienceShort: "2+ Años de Exp.",
+      specialty: "Full Stack · UI Craft"
     },
     about: {
       title: 'Sobre mí',
@@ -93,7 +98,12 @@ export const translations = {
       description: "Creating modern digital experiences with",
       and: "and",
       viewProjects: "View Projects",
-      contactMe: "Contact Me"
+      contactMe: "Contact Me",
+      available: "Available for work",
+      roleTag: "Full Stack Developer",
+      location: "Mexico (UTC-6)",
+      experienceShort: "2+ Yrs Exp.",
+      specialty: "Full Stack · UI Craft"
     },
     about: {
       title: 'About Me',

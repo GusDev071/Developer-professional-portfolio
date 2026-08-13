@@ -6,12 +6,9 @@ import Contact from "./pages/contact"
 import Footer from "./components/footer"
 
 function App() {
-
   return (
     <>
-      <nav>
-        <Navbar />
-      </nav>
+      <Navbar />
       <main>
         <Hero />
         <About />

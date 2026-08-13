@@ -3,18 +3,18 @@ import type { ReactNode } from 'react';
 
 interface ScrollRevealProps {
   children: ReactNode;
-  animation?: string; // Clase de animación de Tailwind (ej: 'animate-fade-in')
-  delay?: string; // Clase de delay (ej: 'delay-200')
-  className?: string; // Clases adicionales para el contenedor
-  threshold?: number; // Porcentaje de visibilidad para activar (0 a 1)
+  animation?: string;
+  delay?: string;
+  className?: string;
+  threshold?: number;
 }
 
-export default function ScrollReveal({ 
-  children, 
-  animation = 'animate-fade-in', 
-  delay = '', 
+export default function ScrollReveal({
+  children,
+  animation = 'animate-rise',
+  delay = '',
   className = '',
-  threshold = 0.1 
+  threshold = 0.12,
 }: ScrollRevealProps) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -24,12 +24,12 @@ export default function ScrollReveal({
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // Solo animar una vez
+          observer.disconnect();
         }
       },
-      { 
+      {
         threshold,
-        rootMargin: '0px 0px -50px 0px' // Activar un poco antes de que entre completamente
+        rootMargin: '0px 0px -48px 0px',
       }
     );
 
@@ -41,9 +41,9 @@ export default function ScrollReveal({
   }, [threshold]);
 
   return (
-    <div 
-      ref={ref} 
-      className={`${className} transition-opacity duration-500 ${isVisible ? `${animation} ${delay} opacity-100` : 'opacity-0'}`}
+    <div
+      ref={ref}
+      className={`${className} ${isVisible ? `${animation} ${delay}` : 'opacity-0'}`}
     >
       {children}
     </div>

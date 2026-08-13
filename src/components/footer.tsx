@@ -5,39 +5,33 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-black/40 backdrop-blur-md border-t border-white/10 py-8 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-        
-        {/* Copyright & Name */}
-        <div className="text-center md:text-left">
-          <p className="text-gray-400 font-medium">
-            &copy; {currentYear} <span className="text-white font-bold">Gustavo Flores</span>. {t.footer.rights}.
+    <footer className="border-t border-line">
+      <div className="mx-auto max-w-6xl px-5 md:px-6 py-8 md:py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div>
+          <p className="display text-sm font-bold text-paper mb-1">Gustavo Flores</p>
+          <p className="mono text-[11px] text-fog">
+            © {currentYear} · {t.footer.rights}
           </p>
         </div>
 
-        {/* Social Icons */}
-        <div className="flex items-center gap-6">
-          <a 
-            href="https://www.linkedin.com/in/gustavo-flores-cadena-b972152ba/" 
-            target="_blank" 
+        <div className="flex items-center gap-6 mono text-[11px] tracking-[0.12em] uppercase">
+          <a
+            href="https://www.linkedin.com/in/gustavo-flores-cadena-b972152ba/"
+            target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 text-gray-400 hover:text-white hover:bg-green-500/20 hover:scale-110 transition-all duration-300 border border-transparent hover:border-green-500/30"
-            aria-label="LinkedIn"
+            className="text-mist hover:text-signal transition-colors"
           >
-            <i className="fa-brands fa-linkedin-in text-xl"></i>
+            LinkedIn
           </a>
-          
-          <a 
-            href="https://github.com/GusDev071" 
-            target="_blank" 
+          <a
+            href="https://github.com/GusDev071"
+            target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 text-gray-400 hover:text-white hover:bg-green-500/20 hover:scale-110 transition-all duration-300 border border-transparent hover:border-green-500/30"
-            aria-label="GitHub"
+            className="text-mist hover:text-signal transition-colors"
           >
-            <i className="fa-brands fa-github text-xl"></i>
+            GitHub
           </a>
         </div>
-
       </div>
     </footer>
   );
